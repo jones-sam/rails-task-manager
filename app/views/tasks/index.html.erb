@@ -1,0 +1,12 @@
+<h1>My Tasks</h1>
+
+<ul class="list-group ">
+    <% @tasks.each do |task| %>
+    <li class="list-group-item d-flex justify-content-between"><%= link_to task.title, task_path(task.id) %>
+        <%= link_to 'Delete', destroy_path(task.id), method: "delete", class: "btn btn-danger" %>
+    </li>
+    <% end %>
+</ul>
+
+<hr>
+<%= link_to 'Add a new task', new_task_path, class: "btn btn-primary    " %>

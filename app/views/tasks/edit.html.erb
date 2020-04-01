@@ -1,0 +1,15 @@
+<h1>Edit Task</h1>
+
+<%= simple_form_for(@task) do |f| %>
+<%= f.input :title %>
+<%= f.input :details %>
+<div class="form-group">
+    <%= f.label :completed %>
+    <%= f.check_box :completed, {class: "checkbox"}, true, false %>
+</div>
+<%= f.submit "Submit", disable_with: 'Submiting...', class: "btn btn-primary" %>
+<% end %>
+
+<hr>
+
+<%= link_to 'Back to Task', task_path(@task.id) %>
